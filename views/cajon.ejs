@@ -1,0 +1,104 @@
+<%- include('templates/cabecera', {tituloWeb: titulo }) %>
+<div class="mt-20 flex justify-center">
+    <h1 id="cajon-titulo"class="titulo" data-cajon="<%=cajon%>"><%= titulo %></h1>
+</div>
+<div >
+    <div>
+        <img class="logo" src="https://img.icons8.com/bubbles/256/watches-front-view--v2.png" alt="">
+        <div id="digital-clock" class="text-center my-3">
+
+        </div>
+    </div>
+    <div class="alarma">
+
+        <div class="flex justify-center">
+            <h1 class="titulo-alarma">Alarmas</h1>
+        </div>
+        <div data-info="<%= alarmsArray %>" id="alarm-list"  data-usuario="<%= locals.usuario %>" data-idusuario="<%= locals.idusuario %>">
+            <form action="" id="formularioAlarmaPreparada">
+                <select name="alarm-list-select" id="alarm-list-select" class="bg-rose-50 border border-rose-300 text-gray-900 text-sm rounded-lg focus:ring-rose-500 focus:border-rose-500 p-2.5 dark:bg-rose-50 dark:border-rose-300 dark:placeholder-rose-400 dark:text-black dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                    
+                </select>
+                <input id="btnEliminar" type="button"
+                value="Eliminar Alarma"
+                class="text-white bg-gradient-to-r from-purple-500 via-purple-600 to-purple-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-purple-300 dark:focus:ring-purple-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">
+             </form>
+        </div>
+        <hr>
+        
+        <div class="items-center text-center my-5">
+        <form id="formularioAlarma" action="">
+            <label for="hour" class="mb-2 text-sm font-medium text-gray-900 dark:text-white">H:</label>
+            <input type="number" name="hour" id="hour" value="0" class="bg-rose-50 border border-rose-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 dark:bg-transparent dark:border-rose-300 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+            <label for="hour" class="mb-2 text-sm font-medium text-gray-900 dark:text-white">M:</label>
+            <input type="number" name="minute" id="minute" value="0" class="bg-rose-50 border border-rose-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 dark:bg-transparent dark:border-rose-300 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+            <!-- <label for="hour" class="mb-2 text-sm font-medium text-gray-900 dark:text-white">S:</label>
+            <input type="number" name="second" id="second" value="0" class="bg-rose-50 border border-rose-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 dark:bg-transparent dark:border-rose-300 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"> -->
+            <div id="day-div">
+                <!-- <label for="day" class="mb-2 text-sm font-medium text-gray-900 dark:text-white">Día de la semana:</label>
+                <select name="day" id="day" class="bg-rose-50 border border-rose-300 text-gray-900 text-sm rounded-lg focus:ring-rose-500 focus:border-rose-500 p-2.5 dark:bg-transparent dark:border-rose-300 dark:placeholder-rose-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                    <option value="1">Lunes</option>
+                    <option value="2">Martes</option>
+                    <option value="3">Miércoles</option>
+                    <option value="4">Jueves</option>
+                    <option value="5">Viernes</option>
+                    <option value="6">Sábado</option>
+                    <option value="0">Domingo</option>
+                </select> -->
+                <fieldset>
+                    
+                    <legend class="text-white mb-2 text-sm font-medium text-gray-900 dark:text-white">Días de la semana:</legend>
+                    
+                    <div class="checkbox-dias">
+                        <input id="checkbox-1" type="checkbox" value="1" class="w-4 h-4 text-white bg-rose-500 border-white rounded focus:ring-rose-500 dark:focus:ring-white dark:ring-offset-rose-800 dark:focus:ring-offset-rose-800 focus:ring-2 dark:bg-rose-500 dark:border-rose-600"   >
+                        <label for="checkbox-1" class="ml-2 text-sm font-medium text-white dark:text-white">Lunes</label>
+                    </div>
+                    <div class="checkbox-dias">
+                        <input id="checkbox-2" type="checkbox" value="2" class="w-4 h-4 text-white bg-rose-500 border-white rounded focus:ring-rose-500 dark:focus:ring-white dark:ring-offset-rose-800 dark:focus:ring-offset-rose-800 focus:ring-2 dark:bg-rose-500 dark:border-rose-600" >
+                        <label for="checkbox-2" class="ml-2 text-sm font-medium text-white dark:text-white">Martes</label>
+                    </div>
+                    <div class="checkbox-dias">
+                        <input id="checkbox-3" type="checkbox" value="3" class="w-4 h-4 text-white bg-rose-500 border-white rounded focus:ring-rose-500 dark:focus:ring-white dark:ring-offset-rose-800 dark:focus:ring-offset-rose-800 focus:ring-2 dark:bg-rose-500 dark:border-rose-600" >
+                        <label for="checkbox-3" class="ml-2 text-sm font-medium text-white dark:text-white">Miércoles</label>
+                    </div>
+                    <div class="checkbox-dias">
+                        <input id="checkbox-4" type="checkbox" value="4" class="w-4 h-4 text-white bg-rose-500 border-white rounded focus:ring-rose-500 dark:focus:ring-white dark:ring-offset-rose-800 dark:focus:ring-offset-rose-800 focus:ring-2 dark:bg-rose-500 dark:border-rose-600" >
+                        <label for="checkbox-4" class="ml-2 text-sm font-medium text-white dark:text-white">Jueves</label>
+                    </div>
+                    <div class="checkbox-dias">
+                        <input id="checkbox-5" type="checkbox" value="5" class="w-4 h-4 text-white bg-rose-500 border-white rounded focus:ring-rose-500 dark:focus:ring-white dark:ring-offset-rose-800 dark:focus:ring-offset-rose-800 focus:ring-2 dark:bg-rose-500 dark:border-rose-600" >
+                        <label for="checkbox-5" class="ml-2 text-sm font-medium text-white dark:text-white">Viernes</label>
+                    </div>
+                    <div class="checkbox-dias">
+                        <input id="checkbox-6" type="checkbox" value="6" class="w-4 h-4 text-white bg-rose-500 border-white rounded focus:ring-rose-500 dark:focus:ring-white dark:ring-offset-rose-800 dark:focus:ring-offset-rose-800 focus:ring-2 dark:bg-rose-500 dark:border-rose-600" >
+                        <label for="checkbox-6" class="ml-2 text-sm font-medium text-white dark:text-white">Sábado</label>
+                    </div>
+                    <div class="checkbox-dias">
+                        <input id="checkbox-0" type="checkbox" value="0" class="w-4 h-4 text-white bg-rose-500 border-white rounded focus:ring-rose-500 dark:focus:ring-white dark:ring-offset-rose-800 dark:focus:ring-offset-rose-800 focus:ring-2 dark:bg-rose-500 dark:border-rose-600" >
+                        <label for="checkbox-0" class="ml-2 text-sm font-medium text-white dark:text-white">Domingo</label>
+                    </div>
+                  
+                   
+                  </fieldset>
+            </div>
+            <div id="info-div">
+                <!-- <label for="info" class="mb-2 text-sm font-medium text-gray-900 dark:text-white">Información:</label>
+                <input type="text"  name="info" id="info" placeholder='Pastilla' class="bg-rose-50 border border-rose-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 dark:bg-transparent dark:border-rose-300 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"> -->
+                <label for="info" class="mb-2 text-sm font-medium text-gray-900 dark:text-white">Compartimiento:</label>
+                <select name="info" id="info" class="bg-rose-50 border border-rose-300 text-gray-900 text-sm rounded-lg focus:ring-rose-500 focus:border-rose-500 p-2.5 dark:bg-transparent dark:border-rose-300 dark:placeholder-rose-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                    <option value="1">Uno</option>
+                    <option value="2">Dos</option>
+                    <option value="3">Tres</option>
+                    <option value="4">Cuatro</option>
+                </select>
+            </div>
+            <div class="my-5">
+                <input id="btnAlarma" type="button"
+                value="Añadir Alarma"
+                class="text-white bg-gradient-to-r from-purple-500 via-purple-600 to-purple-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-purple-300 dark:focus:ring-purple-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">
+            </div>
+        </form>
+    </div>
+    </div>
+</div>
+<%- include('templates/footer') %>

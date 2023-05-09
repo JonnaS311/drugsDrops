@@ -1,0 +1,281 @@
+.titulo {
+  font-size: 100px;
+  font-family: "Delicious Handrawn", cursive;
+  color: black;
+  text-align: center;
+}
+.logo-contenedor {
+  align-items: center;
+  background-color: #440381;
+  text-align: center;
+  width: 100%;
+}
+.logo {
+  position: relative;
+  max-width: 400px;
+  margin: auto;
+}
+
+
+#textFooter {
+  display: block;
+  position: relative;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  margin: auto;
+  color: white;
+}
+
+.contenedor-fondo-animado {
+  display: block;
+  min-height: 100vh;
+  background: linear-gradient(#ffffff, #f7f3ff);
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+}
+
+
+/* animacion */
+.animacion {
+  z-index: 1;
+}
+span.cuatro,
+span.dos,
+span.tres,
+span.uno {
+  border: 0;
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background-color: #fff;
+  animation: vuela 7s linear infinite normal both;
+}
+span.uno {
+  width: 100px;
+  height: 100px;
+  background-color: #E86BFF;
+  bottom: -100px;
+}
+span.dos {
+  width: 70px;
+  height: 70px;
+  background-color: #90BAFF;
+  bottom: -70px;
+}
+span.tres {
+  width: 50px;
+  height: 50px;
+  background-color: #FF5071;
+  bottom: -50px;
+}
+span.cuatro {
+  width: 20px;
+  height: 20px;
+  background-color: #67F3D4;
+  bottom: -20px;
+}
+@keyframes vuela {
+  from {
+      transform: rotate(0deg);
+      bottom: 0;
+      opacity: 0;
+  }
+  5% {
+      opacity: 20%;
+  }
+  60% {
+      opacity: 20%;
+  }
+  to {
+      transform: rotate(360deg);
+      bottom: calc(100% + 100px);
+      opacity: 0;
+  }
+}
+/* secuencia y orden */
+.animacion span:nth-child(1) {
+  left: 20%;
+  animation-delay: 3s;
+}
+.animacion span:nth-child(2) {
+  left: 50%;
+}
+.animacion span:nth-child(3) {
+  left: 35%;
+  animation-delay: 5s;
+}
+.animacion span:nth-child(4) {
+  left: 75%;
+  animation-delay: 1s;
+}
+.animacion span:nth-child(6) {
+  left: 85%;
+  animation-delay: 3s;
+}
+.animacion span:nth-child(7) {
+  left: 90%;
+  animation-delay: 5s;
+}
+.animacion span:nth-child(8) {
+  left: 65%;
+}
+.animacion span:nth-child(9) {
+  left: 60%;
+}
+.animacion span:nth-child(10) {
+  left: 75%;
+  animation-delay: 6s;
+}
+.animacion span:nth-child(11) {
+  left: 10%;
+}
+.animacion span:nth-child(12) {
+  left: 45%;
+  animation-delay: 3s;
+}
+
+.contenedor-error{
+  display: block;
+  margin: auto;
+  margin-top: 150px;
+  align-items: center;
+}
+
+#error-img{
+  margin: auto  ;
+  max-block-size: 50vh;
+}
+
+#error-titulo{
+  display: block;
+  text-align: center;
+  margin: auto;
+  font-size: 50px;
+  font-family: "Delicious Handrawn", cursive;
+  color: black;
+}
+
+.contenedor-login{
+  display: block;
+  margin: 50px auto;
+  margin-top: 200px;
+  width: 400px;
+  padding: 30px;
+  background: rgba(194, 87, 233, 0.5);
+  border-radius: 10px;
+
+}
+
+.contenedor-login h2{
+  margin: 0 0 30px;
+  padding: 0;
+  font-size: 30px;
+  color: white;
+  text-align: center;
+  font-family: "Delicious Handrawn", cursive;
+  font-size: 70px;
+
+}
+
+.contenedor-login .elemento-login label{
+  color: white;
+}
+
+.contenedor-login .elemento-login input{
+  width: 100%;
+  padding: 10px 0;
+  color: white;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid white;
+  margin-bottom: 30px;
+}
+
+
+
+.titulo-alarma {
+  font-size: 70px;
+  font-family: "Delicious Handrawn", cursive;
+  color: white;
+}
+
+.alarma {
+  position: relative;
+  margin: auto;
+  margin-bottom: 20px;
+  background: rgba(194, 87, 233, 0.5);
+  min-width: 50vh;
+  max-width: 50%;
+  border-radius: 15px 15px 0 0;
+}
+
+#digital-clock {
+  font-size: 50px;
+  font-family: "Delicious Handrawn", cursive;
+  color: black;
+}
+
+#day-div {
+  margin: 20px auto;
+  width: 60%;
+}
+
+#info-div {
+  margin: 5px auto;
+}
+
+#info::placeholder {
+  color: white;
+}
+
+#hour,
+#minute,
+#second {
+  max-width: 50px;
+}
+
+#alarm-list{
+  margin: 10px auto;
+}
+
+#alarm-list-select {
+  display: block;  
+  margin: 10px auto;
+  background: rgba(187, 42, 240, 0.5);
+  color: white;
+  border: none;
+  text-align: center;
+}
+
+#hour, #minute, #second, #info{
+  background: rgba(187, 42, 240, 0.5);
+  color: white;
+  border: none;
+}
+
+
+#btnEliminar{
+    display: block;
+    margin: 10px auto;
+}
+
+.checkbox-dias{
+  display: inline-block;
+  margin: 10px;
+}
+
+
+.alert-login{
+  background: rgba(187, 42, 240, 0.5);
+  text-align: center;
+  margin-bottom: 10px;
+  margin-top: -30px;
+  padding: 8px;
+  border-radius: 8px;
+}
+
+#btnCerrarSesion{
+  border-bottom: solid white 2px;
+}
+

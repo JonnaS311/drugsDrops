@@ -1,0 +1,29 @@
+<%- include('templates/cabecera', {tituloWeb: 'Drugs&Drops' }) %>
+
+<div class="mt-20 flex justify-center">
+    <h1 id="titulo-inicio" class="titulo" data-cajon="<%=cajon%>" data-info="<%= alarmsArray %>" data-usuario="<%= locals.idusuario %>"><%= titulo %></h1>
+</div>
+<div>
+    <img class="logo" src="https://img.icons8.com/bubbles/256/watches-front-view--v2.png" alt="">
+    <div id="digital-clock" class="text-center my-3">
+
+    </div>
+</div>
+<div class="mx-10 mb-10 grid grid-cols-2 gap-4 place-content-center h-48">
+    <a href="/cliente/cajon/1" type="button" class="text-white bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">Primer Cajón</a>
+    <a href="/cliente/cajon/3" type="button" class="text-white bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">Tercer Cajón</a>
+    <a href="/cliente/cajon/2" type="button" class="text-white bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">Segundo Cajón</a>
+    <a href="/cliente/cajon/4" type="button" class="text-white bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">Cuarto  Cajón</a    >
+</div>
+
+
+</section>
+<div class="logo-contenedor">
+    <img class="logo" src="/images/logo.png" alt="">
+    <h3 id="textFooter">© 2023 ElNovioDeGabrielaEsInfiel™. All Rights Reserved.</h3>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="/js/funcionesInicio.js"></script>
+</body>
+</html>
